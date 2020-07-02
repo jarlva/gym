@@ -2,14 +2,23 @@ from gym.envs.registration import registry, register, make, spec
 
 # Algorithmic
 # ----------------------------------------
+
+# My Entry
+
 register(
     id='Myrl-v0',
     entry_point='gym.envs.my_collection:MyrlEnv',
     # max_episode_steps= 120, #165 for ewz5min
     # reward_threshold=0.1,
 )# My Entry
-
-
+'''
+register(
+    id='MyCartPole-v0',
+    entry_point='gym.envs.my_collection:MyCartPoleEnv',
+    max_episode_steps= 135 #96, #500, #97,
+    # reward_threshold=0.5,
+)
+'''
 register(
     id='Copy-v0',
     entry_point='gym.envs.algorithmic:CopyEnv',
@@ -88,7 +97,8 @@ register(
 register(
     id='Pendulum-v0',
     entry_point='gym.envs.classic_control:PendulumEnv',
-    max_episode_steps=200,
+    # max_episode_steps=200, # jh
+    max_episode_steps=20000,
 )
 
 register(
@@ -116,14 +126,14 @@ register(
 )
 
 register(
-    id='BipedalWalker-v3',
+    id='BipedalWalker-v2',
     entry_point='gym.envs.box2d:BipedalWalker',
     max_episode_steps=1600,
     reward_threshold=300,
 )
 
 register(
-    id='BipedalWalkerHardcore-v3',
+    id='BipedalWalkerHardcore-v2',
     entry_point='gym.envs.box2d:BipedalWalkerHardcore',
     max_episode_steps=2000,
     reward_threshold=300,
@@ -188,7 +198,7 @@ register(
 )
 
 register(
-    id='Taxi-v3',
+    id='Taxi-v2',
     entry_point='gym.envs.toy_text:TaxiEnv',
     reward_threshold=8, # optimum = 8.46
     max_episode_steps=200,

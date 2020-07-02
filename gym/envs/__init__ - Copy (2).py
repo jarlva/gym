@@ -2,13 +2,21 @@ from gym.envs.registration import registry, register, make, spec
 
 # Algorithmic
 # ----------------------------------------
+
 register(
     id='Myrl-v0',
     entry_point='gym.envs.my_collection:MyrlEnv',
-    # max_episode_steps= 120, #165 for ewz5min
+    # max_episode_steps= 400,
     # reward_threshold=0.1,
 )# My Entry
-
+'''
+register(
+    id='MyCartPole-v0',
+    entry_point='gym.envs.my_collection:MyCartPoleEnv',
+    max_episode_steps= 135 #96, #500, #97,
+    # reward_threshold=0.5,
+)
+'''
 
 register(
     id='Copy-v0',
@@ -67,6 +75,8 @@ register(
 register(
     id='CartPole-v1',
     entry_point='gym.envs.classic_control:CartPoleEnv',
+    #max_episode_steps=500,
+    #reward_threshold=475.0,
     max_episode_steps=500,
     reward_threshold=475.0,
 )
@@ -116,14 +126,14 @@ register(
 )
 
 register(
-    id='BipedalWalker-v3',
+    id='BipedalWalker-v2',
     entry_point='gym.envs.box2d:BipedalWalker',
     max_episode_steps=1600,
     reward_threshold=300,
 )
 
 register(
-    id='BipedalWalkerHardcore-v3',
+    id='BipedalWalkerHardcore-v2',
     entry_point='gym.envs.box2d:BipedalWalkerHardcore',
     max_episode_steps=2000,
     reward_threshold=300,
